@@ -67,7 +67,7 @@ monitoring:
 ```
 
 ### Reference Values
-You can reference a value from another component with `${place@holder}`.
+You can reference a value from current or another component with `${place@holder}`.
 
 `payment-backend`
 ```yaml
