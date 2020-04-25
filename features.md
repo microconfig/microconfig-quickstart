@@ -20,8 +20,6 @@ You can extract common parts of configuration to a dedicated component and reuse
 
 `payments-backend`
 ```yaml
-#include monitoring
-
 name: payment-backend
 
 server:
@@ -33,13 +31,13 @@ payment-gateway: http://gateway-mock.local
 database:
   pool-size: 10
   type: Postgres
-  url: jdbc:postgres://10.10.10.10:5432/payments 
+  url: jdbc:postgres://10.10.10.10:5432/payments
+
+#include monitoring
 ```
 
 `payments-frontend`
 ```yaml
-#include monitoring
-
 name: payment-frontend
 
 server:
@@ -51,6 +49,8 @@ server:
 payment-backend:
   host: http://payment-backend.local
   path: /api
+
+#include monitoring
 ```
 
 `monitoring`
