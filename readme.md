@@ -39,7 +39,7 @@ Generated payments-backend/application.yaml
 Generated [dev] configs in 221ms
 ```
 
-Here parameters mean: 
+Parameters: 
 * `-r .` use the current directory as root folder
 * `-e dev` generate for `dev` environment
 * `-s payments-backend` generate for `payments-backend` service
@@ -64,7 +64,7 @@ Generated payments-frontend/application.yaml
 Generated [prod] configs in 254ms
 ```
 
-Here parameters mean: 
+Parameters: 
 * `-r .` use the current directory as root folder
 * `-e prod` generate for `prod` environment
 * `-g payments` generate for `payments` group
@@ -91,7 +91,7 @@ Generated payments-frontend/application.yaml
 Generated [dev] configs in 320ms
 ```
 
-Here parameters mean: 
+Parameters: 
 * `-r .` use the current directory as root folder
 * `-e dev` generate for `dev` environment
 
