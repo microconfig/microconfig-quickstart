@@ -1,4 +1,4 @@
 payments:
   components:
-    - payments-backend
-    - payments-frontend
+    - payment-backend
+    - payment-frontend

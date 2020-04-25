@@ -1,26 +1,31 @@
 # Features by Example
 
-### Simple Directory Structure
-You choose your configuration layout. The only requirement is that configuration should be somewhere in `components` folder.
-You can group and organize folders the way it makes sense for you. Each folder with files is a named component and can be used to store configuration. 
-
+### Simple Configuration Layout
+You choose your configuration layout. You can group and organize your repository the way it makes sense for you.
+Each folder with files is a named component and can used by Microconfig. Only requirement is that configuration should be somewhere in `components` folder.
 ```
 components
 ├── payments
-│   ├── payments-backend
-│   └── payments-frontend
-└── others
-    ├── other-service-1
-    └── other-service-2
+│   ├── payment-backend
+│   │   └── application.yaml
+│   └── payment-frontend
+│       └── application.yaml
+└── ...
+│   ├── ...
+│   │   └── ...
+│   └── ...
+│       └── ...
 ...
 ```
+
+(more details in docs)
 
 ### Remove Copy-Paste
 You can extract common parts of configuration to a dedicated component and reuse it via `#include`. 
 
 (Button before/after)
 
-`payments-backend`
+`payment-backend`
 ```yaml
 name: payment-backend
 
@@ -33,12 +38,12 @@ payment-gateway: http://gateway-mock.local
 database:
   pool-size: 10
   type: Postgres
-  url: jdbc:postgres://10.10.10.10:5432/payments
+  url: jdbc:postgres://10.10.10.10:5432/database
 
 #include monitoring
 ```
 
-`payments-frontend`
+`payment-frontend`
 ```yaml
 name: payment-frontend
 

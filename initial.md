@@ -15,7 +15,7 @@ payment-gateway: http://gateway-mock.local
 database:
   type: Postgres
   pool-size: 10
-  url: jdbc:postgres://10.10.10.10:5432/payments
+  url: jdbc:postgres://10.10.10.10:5432/database
   
 monitoring:
   base-path: /monitoring
@@ -82,7 +82,7 @@ payment-gateway: https://payment-gateway.com
 database:
   type: Postgres
   pool-size: 50
-  url: jdbc:postgres://20.20.20.20:5432/payments
+  url: jdbc:postgres://20.20.20.20:5432/database
   
 monitoring:
   base-path: /monitoring
