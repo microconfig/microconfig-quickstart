@@ -77,7 +77,7 @@ server:
   port: 80
   context: /api
   
-payment-gateway: http://payment-gateway.com
+payment-gateway: https://payment-gateway.com
 
 database:
   type: Postgres
@@ -129,7 +129,7 @@ image: "payment-frontend:2.1"
 replicas: 3
 
 ingress:
-  host: http://payments.local
+  host: https://payments.example.com
 
 probes:
   health: /monitoring/health
