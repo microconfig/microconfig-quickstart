@@ -28,13 +28,13 @@ name: payment-frontend
 
 server:
   port: 80
-  timeout: 180000
   minThreads: 10
   maxThreads: 100
   
 payment-backend: 
   host: http://payment-backend.local
   path: /api
+  timeoutMs: 180000
 
 monitoring:
   base-path: /monitoring
@@ -95,13 +95,13 @@ name: payment-frontend
 
 server:
   port: 80
-  timeout: 180000
   minThreads: 10
   maxThreads: 100
   
 payment-backend: 
   host: http://payment-backend.local
   path: /api
+  timeoutMs: 180000
 
 monitoring:
   base-path: /monitoring
