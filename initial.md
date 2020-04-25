@@ -136,6 +136,9 @@ probes:
   ready: /monitoring/ready
 ```
 
-As you can see a lot of copy-paste. Some environment specific values and clear dependencies between services.
+As you can see a lot of copy-paste, some environment specific values and clear dependencies between services. 
+Not let's see how Microconfig solves these problems:
 
-[Let's see what can we do about this](features.md)
+[See individual features in action](features.md)
+
+[See all features working together](https://github.com/microconfig/microconfig-quickstart)
