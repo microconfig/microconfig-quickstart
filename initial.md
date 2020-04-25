@@ -2,7 +2,7 @@
 Let's imagine that this project contains multiple microservices, but we will focus on 2. One backend and one frontend.
 Their current configuration:
 
-`payment-backend config for dev environent`
+`payment-backend application config for dev`
 ```yaml
 name: payment-backend
 
@@ -22,7 +22,7 @@ monitoring:
   endpoints: info, health, prometheus
 ```
 
-`payment-frontend config for dev`
+`payment-frontend application config for dev`
 ```yaml
 name: payment-frontend
 
@@ -69,7 +69,7 @@ probes:
   ready: /monitoring/ready
 ```
 
-`payment-backend config for prod environent`
+`payment-backend application config for prod`
 ```yaml
 name: payment-backend
 
@@ -89,7 +89,7 @@ monitoring:
   endpoints: info, health, prometheus
 ```
 
-`payment-frontend config for prod`
+`payment-frontend application config for prod`
 ```yaml
 name: payment-frontend
 
