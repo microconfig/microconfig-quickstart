@@ -136,4 +136,6 @@ probes:
   ready: /monitoring/ready
 ```
 
-[Let's see what can we do to simplify them](features.md)
+As you can see a lot of copy-paste. Some environment specific values and clear dependencies between services.
+
+[Let's see what can we do about this](features.md)
