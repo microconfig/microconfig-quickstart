@@ -23,7 +23,7 @@ cd microconfig-quickstart
 Download the latest jar from [releases](https://www.google.com) and place it as `microconfig.jar` in `microconfig-quickstart` folder.  
 
 ### Install Java
-Microconfig requires any Java SE 8+ JDK. 
+Microconfig requires any Java SE JDK version 8 or higher. 
 
 ## Usage
 
