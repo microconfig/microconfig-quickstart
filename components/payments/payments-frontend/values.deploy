@@ -1,0 +1,10 @@
+image: "payment-frontend:latest"
+
+replicas: 1
+
+ingress:
+  host: http://payments.local
+
+probes:
+  health: /monitoring/health
+  ready: /monitoring/ready

@@ -1,0 +1,10 @@
+image: "payment-backend:latest"
+
+replicas: 1
+
+ingress:
+  host: http://payment-backend.local
+
+probes:
+  health: /monitoring/health
+  ready: /monitoring/ready
