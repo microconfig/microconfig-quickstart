@@ -1,16 +1,18 @@
 # Features by Example
 
 ### Simple directory structure
-You choose your configuration layout. The only requirement is that configuration should be somewhere in `components` folder. 
-Each sub-folder is considered a named component and can be used to store configuration. 
-So let's create folders for each of our services and place current `dev` application configuration in them.
- 
+You choose your configuration layout. The only requirement is that configuration should be somewhere in `components` folder.
+You can group and organize folders the way it makes sense for you. Each folder with files is a named component and can be used to store configuration. 
+
 ```
 components
-├── payments-backend
-│   └── application.yaml
-└── payments-frontend
-    └── application.yaml
+├── payments
+│   ├── payments-backend
+│   └── payments-frontend
+└── others
+    ├── other-service-1
+    └── other-service-2
+...
 ```
 
 ### Remove Copy-Paste
