@@ -1,5 +1,12 @@
 # Microconfig Quickstart
 
+## What you will learn
+You will see how easy it is to install and use microconfig. 
+
+## What you need
+* Java Development Kit `JDK`. Any version 8 or higher. You can grab one [here](https://adoptopenjdk.net)
+* (optional) `git` to checkout our example repo. 
+
 ## Configuration Example
 
 ### Repository Description
@@ -13,19 +20,20 @@ Environment description contains 2 environments:
 * `dev`
 * `prod`
 
-### Checkout Repository
+### Get Example Repository
+
+You can use `git`
 ```shell script
 git clone https://github.com/microconfig/microconfig-quickstart.git
 cd microconfig-quickstart
 ```
 
+Or just download and unzip it directly [GitHub](https://github.com/microconfig/microconfig-quickstart/archive/master.zip)
+
 ## Setup
 
 ### Download microconfig.jar 
-Download the latest jar from [releases](https://www.google.com) and place it as `microconfig.jar` in `microconfig-quickstart` folder.  
-
-### Install Java
-Microconfig requires any Java SE JDK version 8 or higher. 
+Download the latest jar from [releases](https://github.com/microconfig/microconfig/releases) and place it as `microconfig.jar` in `microconfig-quickstart` folder.  
 
 ## Usage
 

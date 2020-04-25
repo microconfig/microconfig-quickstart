@@ -1,4 +1,4 @@
-# Quickstart
+# Features
 
 ### Meet the project
 Let's imagine that this project contains multiple microservices, but we will focus on 2. Together they provide some generic payment functionality. One backend and one frontend.
