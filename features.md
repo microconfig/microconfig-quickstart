@@ -109,7 +109,7 @@ monitoring:
   endpoints: info, health, ready, prometheus
 ```
 
-### Dynamic values
+### Dynamic config values
 You can use rich `#{expression+language}` to dynamically generate your values. It supports math operations and much more. 
 In this example we have `payment-backend.timeoutMs` which is 3 minutes in milliseconds, let's calculate this value with expression 
 making it easier to understand.
