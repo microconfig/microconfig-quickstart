@@ -1,0 +1,3 @@
+monitoring:
+  base-path: /monitoring
+  endpoints: info, health, ready, prometheus
