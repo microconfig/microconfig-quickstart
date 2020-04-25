@@ -128,7 +128,7 @@ monitoring:
 ```
 
 ### Environment Specific Config
-You can have specific values for each environment you need. They will be merged with your base configuration.
+You can have `.env.` specific values for each environment you need. They will be merged with your base configuration.
 
 `payment-backend/application.dev.yaml`
 ```yaml
