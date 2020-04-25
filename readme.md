@@ -22,9 +22,9 @@ Environment description contains 2 environments:
 
 ## Setup
 
-### Download example repository
+### Example repository
 
-You can use `git`
+Checkout with `git`
 ```shell script
 git clone https://github.com/microconfig/microconfig-quickstart.git
 cd microconfig-quickstart
@@ -33,7 +33,7 @@ cd microconfig-quickstart
 Or just [download](https://github.com/microconfig/microconfig-quickstart/archive/master.zip) and unzip it directly.
 
 
-### Download microconfig.jar 
+### microconfig.jar 
 [Download](https://github.com/microconfig/microconfig/releases) the latest jar from releases and place it as `microconfig.jar` in `microconfig-quickstart` folder. You're done :) 
 
 ## Usage
