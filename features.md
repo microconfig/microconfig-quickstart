@@ -43,6 +43,34 @@ monitoring:
   endpoints: info, health, ready, prometheus
 ```
 
+`payment-backend deploy config for dev`
+```yaml
+image: "payment-backend:latest"
+
+replicas: 1
+
+ingress:
+  host: http://payment-backend.local
+
+probes:
+  health: /monitoring/health
+  ready: /monitoring/ready
+```
+
+`payment-frontend deploy config for dev`
+```yaml
+image: "payment-frontend:latest"
+
+replicas: 1
+
+ingress:
+  host: http://payments.local
+
+probes:
+  health: /monitoring/health
+  ready: /monitoring/ready
+```
+
 `payment-backend config for prod environent`
 ```yaml
 name: payment-backend
@@ -80,6 +108,34 @@ payment-backend:
 monitoring:
   base-path: /monitoring
   endpoints: info, health, ready, prometheus
+```
+
+`payment-backend deploy config for prod`
+```yaml
+image: "payment-backend:1.5"
+
+replicas: 2
+
+ingress:
+  host: http://payment-backend.local
+
+probes:
+  health: /monitoring/health
+  ready: /monitoring/ready
+```
+
+`payment-frontend deploy config for prod`
+```yaml
+image: "payment-frontend:2.1"
+
+replicas: 3
+
+ingress:
+  host: http://payments.local
+
+probes:
+  health: /monitoring/health
+  ready: /monitoring/ready
 ```
 
 Let's migrate them to Microconfig.
