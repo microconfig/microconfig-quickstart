@@ -3,11 +3,13 @@
 ## Example Repo
 
 ### Repository Description
-This repository contains configuration example for 2 services grouped into 1 `payments` group:
+This repository contains configuration example for 2 services:
 * `payments-backend` 
 * `payments-frontend`
 
-It supports 2 environments:
+Services are grouped into `payments` group.
+
+Environment description contains 2 environments:
 * `dev`
 * `prod`
 
