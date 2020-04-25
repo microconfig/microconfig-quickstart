@@ -1,0 +1,16 @@
+name: payment-backend
+
+server:
+  port: 80
+  context: /api
+
+payment-gateway: http://gateway-mock.local
+
+database:
+  pool-size: 10
+  type: Postgres
+  url: jdbc:postgres://10.10.10.10:5432/payments
+
+monitoring:
+  base-path: /monitoring
+  endpoints: info, health, prometheus
