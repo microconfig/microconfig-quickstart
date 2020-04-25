@@ -1,6 +1,6 @@
 ### Typical microservice configuration
 Let's imagine that this project contains multiple microservices, but we will focus on 2. One backend and one frontend.
-Their current configuration:
+Their current configuration for dev and prod is below. Try to spot the difference :)
 
 `payment-backend application config for dev`
 ```yaml
