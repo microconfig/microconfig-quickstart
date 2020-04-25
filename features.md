@@ -1,6 +1,6 @@
 # Features by Example
 
-### Simple directory structure
+### Simple Directory Structure
 You choose your configuration layout. The only requirement is that configuration should be somewhere in `components` folder.
 You can group and organize folders the way it makes sense for you. Each folder with files is a named component and can be used to store configuration. 
 
