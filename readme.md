@@ -2,12 +2,7 @@
 
 ## Example repo
 
-### Checkout repository
-```shell script
-git clone https://github.com/microconfig/microconfig-quickstart.git
-cd microconfig-quickstart
-```
-
+### Repository description
 This repository contains configuration example for 2 services grouped into 1 `payments` group:
 * `payments-backend` 
 * `payments-frontend`
@@ -15,6 +10,12 @@ This repository contains configuration example for 2 services grouped into 1 `pa
 It supports 2 environments:
 * `dev`
 * `prod`
+
+### Checkout repository
+```shell script
+git clone https://github.com/microconfig/microconfig-quickstart.git
+cd microconfig-quickstart
+```
 
 ## Setup
 
