@@ -1,26 +1,28 @@
 # Microconfig Quickstart
 
-## What you will learn
+### What you will learn
 You will see how easy it is to install and use microconfig. 
 
-## What you need
+### What you need
 * Java Development Kit `JDK`. Any version 8 or higher. You can grab one [here](https://adoptopenjdk.net)
 * (optional) `git` to checkout our example repo. 
 
-## Example Repository
+## Example Configuration
 
 ### Description
-This repository contains configuration example for 2 services:
+Our configuration example has 2 services:
 * `payments-backend` 
 * `payments-frontend`
 
-Services are grouped into `payments` group.
+Services are combined into `payments` group.
 
 Environment description contains 2 environments:
 * `dev`
 * `prod`
 
-### Get It
+## Setup
+
+### Download example repository
 
 You can use `git`
 ```shell script
@@ -30,7 +32,6 @@ cd microconfig-quickstart
 
 Or just [download](https://github.com/microconfig/microconfig-quickstart/archive/master.zip) and unzip it directly.
 
-## Microconfig Setup
 
 ### Download microconfig.jar 
 [Download](https://github.com/microconfig/microconfig/releases) the latest jar from releases and place it as `microconfig.jar` in `microconfig-quickstart` folder. You're done :) 
