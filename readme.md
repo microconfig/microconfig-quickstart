@@ -28,12 +28,12 @@ git clone https://github.com/microconfig/microconfig-quickstart.git
 cd microconfig-quickstart
 ```
 
-Or just download and unzip it directly [GitHub](https://github.com/microconfig/microconfig-quickstart/archive/master.zip)
+Or just [download](https://github.com/microconfig/microconfig-quickstart/archive/master.zip) and unzip it directly.
 
 ## Setup
 
 ### Download microconfig.jar 
-Download the latest jar from [releases](https://github.com/microconfig/microconfig/releases) and place it as `microconfig.jar` in `microconfig-quickstart` folder.  
+[Download](https://github.com/microconfig/microconfig/releases) the latest jar from releases and place it as `microconfig.jar` in `microconfig-quickstart` folder.  
 
 ## Usage
 
