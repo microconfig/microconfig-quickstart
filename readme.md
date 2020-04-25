@@ -78,7 +78,7 @@ build
     └── application.yaml
 ```  
 
-### Generate configuration for all services in specific environment
+### Generate configuration for all services in a specific environment
 Let's generate configuration for all services in `dev` environment.
 
 ```shell script
