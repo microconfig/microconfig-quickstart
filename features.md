@@ -67,10 +67,8 @@ monitoring:
   endpoints: info, health, ready, prometheus
 ```
 
-### Reference a config value from another service
-You can reference a specific value from other component with `${place@holder}`. This allows you to remove copy-paste and have 
-clear dependencies in your configuration. You can reference other components with `${component-name@foo.bar}` 
-or you can even reference current component with `${this@foo.bar}`.
+### Reference Values
+You can reference a value from another component with `${place@holder}`.
 
 `payment-backend`
 ```yaml
@@ -109,10 +107,8 @@ monitoring:
   endpoints: info, health, ready, prometheus
 ```
 
-### Dynamic config values
-You can use rich `#{expression+language}` to dynamically generate your values. It supports math operations and much more. 
-In this example we have `payment-backend.timeoutMs` which is 3 minutes in milliseconds, let's calculate this value with expression 
-making it easier to understand.
+### Dynamic Values
+You can use `#{expression+language}` to dynamically generate your values. It supports math operations and much more. 
 
 `payment-frontend`
 ```yaml
@@ -129,4 +125,41 @@ payment-backend:
 monitoring:
   base-path: /monitoring
   endpoints: info, health, ready, prometheus
+```
+
+### Environment Specific Config
+You can have specific values for each environment you need. They will be merged with your base configuration.
+
+`payment-backend/application.dev.yaml`
+```yaml
+payment-gateway: http://gateway-mock.local
+
+database:
+  url: jdbc:postgres://10.10.10.10:5432/database
+```
+
+`payment-backend/application.prod.yaml`
+```yaml
+payment-gateway: https://payment-gateway.com
+
+database:
+  pool-size: 50
+  url: jdbc:postgres://20.20.20.20:5432/database
+```
+
+`payment-backend/application.yaml`
+```yaml
+name: payment-backend
+
+server:
+  port: 80
+  context: /api
+  
+database:
+  type: Postgres
+  pool-size: 10
+  
+monitoring:
+  base-path: /monitoring
+  endpoints: info, health, prometheus
 ```
