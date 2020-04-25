@@ -1,6 +1,6 @@
 # Microconfig Quickstart
 
-## Example Repo
+## Configuration Example
 
 ### Repository Description
 This repository contains configuration example for 2 services:
