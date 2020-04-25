@@ -7,7 +7,6 @@ and have a button "before after" to flip raw code and microconfig version
 
 ### Simple Configuration Layout
 You choose your configuration layout. You can group and organize your repository the way it makes sense for you.
-Each folder with files is a named component and can used by Microconfig. Only requirement is that configuration should be somewhere in `components` folder.
 ```
 components
 ├── payments
