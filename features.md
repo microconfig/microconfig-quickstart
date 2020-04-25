@@ -14,28 +14,9 @@ components
 ```
 
 ### Remove Copy-Paste
-You can extract common parts of configuration to a dedicated component and reuse it via `#include`. So let's extract monitoring configuration. 
-We create `components/common/monitoring` folder and create an `application.yaml` file in it.
-```
-components
-├── common
-│   └── monitoring
-│       └── application.yaml
-├── payments-backend
-│   └── application.yaml
-└── payments-frontend
-    └── application.yaml
-```
+You can extract common parts of configuration to a dedicated component and reuse it via `#include`. 
 
-This allows us to move monitoring configuration part in a named component `monitoring` and `#include` it in our services.
 (Button before/after)
-
-`monitoring`
-```yaml
-monitoring:
-  base-path: /monitoring
-  endpoints: info, health, ready, prometheus
-```
 
 `payments-backend`
 ```yaml
@@ -70,4 +51,11 @@ server:
 payment-backend:
   host: http://payment-backend.local
   path: /api
+```
+
+`monitoring`
+```yaml
+monitoring:
+  base-path: /monitoring
+  endpoints: info, health, ready, prometheus
 ```
