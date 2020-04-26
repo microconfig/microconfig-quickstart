@@ -1,9 +1,11 @@
 # Microconfig Quickstart
 
 ## What you will learn
+
 You will see how easy it is to install and use microconfig. 
 
 ## What you need
+
 * Java Development Kit `JDK`. Any version 8 or higher. You can grab one [here](https://adoptopenjdk.net)
 * (optional) `git` to checkout our example repo. 
 
