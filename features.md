@@ -162,3 +162,107 @@ monitoring:
   base-path: /monitoring
   endpoints: info, health, prometheus
 ```
+
+### Static Files Templating
+You can use static templates and populate them with your data.
+
+`log template.xml`
+```xml
+<configuration>
+    <appender class="ch.qos.logback.core.FileAppender">
+        <file>logs/${this@name}.log</file>
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} %-5level %logger{15} %msg %n</pattern>
+            </encoder>
+    </appender>    
+</configuration>
+```
+
+`payment-backend`
+```yaml
+microconfig.template.log:
+  fromFile: ${log@configDir}/template.xml
+  toFile: logback.xml
+
+name: payment-backend
+
+server:
+  port: 80
+  context: /api
+  
+payment-gateway: http://gateway-mock.local
+
+database:
+  type: Postgres
+  pool-size: 10
+  url: jdbc:postgres://10.10.10.10:5432/database
+  
+monitoring:
+  base-path: /monitoring
+  endpoints: info, health, prometheus
+```
+
+`payment-backend logback.xml`
+```xml
+<configuration>
+    <appender class="ch.qos.logback.core.FileAppender">
+        <file>logs/payment-backend.log</file>
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} %-5level %logger{15} %msg %n</pattern>
+            </encoder>
+    </appender>    
+</configuration>
+```
+
+### Results Diff
+Microconfig can generate git style `diff` for result files, so you can see how your configuration changes and compare different points in time.
+
+`payment-frontend before`
+```yaml
+name: payment-frontend
+
+monitoring:
+  base-path: /monitoring
+  endpoints: info, health, ready, prometheus
+
+payment-backend:
+  host: http://payment-backend.local
+  path: /api
+
+server:
+  maxThreads: 100
+  minThreads: 10
+  port: 80
+  timeoutMs: 180000
+```  
+
+`payment-frontend now`
+```yaml
+name: payment-frontend
+
+monitoring:
+  base-path: /monitoring
+  endpoints: info, health, ready, prometheus
+
+payment-backend:
+  host: https://payment-backend.local
+  path: /api
+  timeoutMs: 180000
+
+server:
+  port: 80
+```
+
+`payment-frontend diff`
+```yaml
++payment-backend:
+  timeoutMs: 180000
+
+-server:
+  maxThreads: 100
+  minThreads: 10
+  timeoutMs: 180000
+
+payment-backend:
+  host: http://payment-backend.local -> https://payment-backend.local
+```
