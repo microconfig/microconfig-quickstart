@@ -22,7 +22,6 @@ components
 ...
 ```
 
-
 ### Reuse Common Parts
 You can extract common parts of configuration to a dedicated component and reuse it with `#include`. 
 
