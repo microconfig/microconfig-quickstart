@@ -9,7 +9,6 @@ You will see how easy it is to install and use microconfig.
 
 ## Example Configuration
 
-### Description
 Our configuration example has 2 services:
 * `payments-backend` 
 * `payments-frontend`

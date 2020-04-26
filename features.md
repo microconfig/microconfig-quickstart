@@ -164,7 +164,7 @@ monitoring:
 ```
 
 ### Static Files Templating
-You can use static templates and populate them with your data.
+You can use static templates and populate them with data unique for each service.
 
 `log template.xml`
 ```xml
@@ -214,8 +214,8 @@ monitoring:
 </configuration>
 ```
 
-### Results Diff
-Microconfig can generate git style `diff` for result files, so you can see how your configuration changes and compare different points in time.
+### Config Diff
+You can generate git style `diff` and see how your configuration changes overtime or compare points in time.
 
 `payment-frontend before`
 ```yaml
