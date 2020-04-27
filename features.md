@@ -1,29 +1,45 @@
 # Features by Example
 
-```
-Every feature should have a link to docs
-and have a button "before after" to flip raw code and microconfig version
-```
 
-### Simple Configuration Layout
-You choose your configuration layout. You can group and organize your repository the way it makes sense for you.
+## Simple Configuration Layout
+
+### Problem
+Other configuration frameworks can demand a specific configuration folder structure or specific filenames.
+
+### Solution
+Microconfig only asks you to create folders for your services somewhere in `components` folder. 
+You choose the names and folder structure. If you have different types of configuration just place them in the same service folder. 
+
 ```
 components
 ├── payments
 │   ├── payment-backend
 │   │   └── application.yaml
+│   │   └── values.deploy
 │   └── payment-frontend
-│       └── application.yaml
+│       └── application.yaml
+│       └── values.deploy
 └── ...
 │   ├── ...
+│   │   ├── ...
+│   │   │   ├── ...
+│   │   │   └── ...
 │   │   └── ...
 │   └── ...
 │       └── ...
 ...
 ```
 
-### Reuse Common Parts
-You can extract common parts of configuration to a dedicated component and reuse it with `#include`. 
+## Reuse Common Parts
+
+### Problem
+Microservices have a lot of shared configuration parts that is copy-pasted between them. So you need to go through all services
+one by one to update this shared part.
+
+### Solution
+Microconfig allows you to extract common parts of configuration to a dedicated component and reuse it with `#include`.
+This way service config is more focused on unique parts and all common parts are just included. In this case if you need
+to update your common part you just do it in one place and everyone gets this update via `#include`. 
 
 `payment-backend`
 ```yaml
@@ -65,8 +81,16 @@ monitoring:
   endpoints: info, health, ready, prometheus
 ```
 
-### Reference Values
-You can reference a value from current or another component with `${place@holder}`.
+## Reference Values
+
+### Problem
+Different services can depend on each other's configuration keys. For example frontend needs backend's api base path. 
+You can just keep this value in two places but in this case you need to remember about this dependency and update them both.  
+
+### Solution
+Microconfig can reference a value from current or another component with a `${placeholder}`. This allows you to keep values
+only in original services and all who depend on them can just have an explicit reference. In this case you need to update 
+the value only once.
 
 `payment-backend`
 ```yaml
@@ -76,16 +100,7 @@ server:
   port: 80
   context: /api
   
-payment-gateway: http://gateway-mock.local
-
-database:
-  type: Postgres
-  pool-size: 10
-  url: jdbc:postgres://10.10.10.10:5432/database
-  
-monitoring:
-  base-path: /monitoring
-  endpoints: info, health, prometheus
+...
 ```
 
 `payment-frontend`
@@ -100,13 +115,16 @@ payment-backend:
   path: ${payment-backend@server.context}
   timeoutMs: 180000
 
-monitoring:
-  base-path: /monitoring
-  endpoints: info, health, ready, prometheus
+...
 ```
 
-### Dynamic Values
-You can use `#{expression+language}` to dynamically generate your values. It supports math operations and much more. 
+## Dynamic Values
+
+### Problem
+Sometimes static values are not enough, and you want to do a `+1` or `base64`. Some values even are more readable as expressions.    
+
+### Solution
+Microconfig has `#{expression+language}` to dynamically generate your values. It supports math operations and much more. 
 
 `payment-frontend`
 ```yaml
@@ -125,8 +143,16 @@ monitoring:
   endpoints: info, health, ready, prometheus
 ```
 
-### Environment Specific Config
-You can have `.env.` specific values for each environment you need. They will be merged with your base configuration.
+## Environment Specific Config
+
+### Problem
+We deploy to different environments that have specific properties. Your production database has different ip address than your dev.
+All of those specifications should be applied to final version for your environment.    
+
+### Solution
+Microconfig supports specific values for each environment you need. You just create an override `.env.` file near your base configuration.
+In this file you specify all that you want for your `env` and it will be merged with your base configuration. 
+More specific values will override base ones.
 
 `payment-backend/application.dev.yaml`
 ```yaml
@@ -149,21 +175,22 @@ database:
 ```yaml
 name: payment-backend
 
-server:
-  port: 80
-  context: /api
-  
 database:
   type: Postgres
   pool-size: 10
   
-monitoring:
-  base-path: /monitoring
-  endpoints: info, health, prometheus
+...
 ```
 
-### Static Files Templating
-You can use static templates and populate them with data unique for each service.
+## Static Files Templating
+
+### Problem
+Your services usually require some additional 3rd party configuration files like a log configuration or a deploy script.
+It's easy if these files are same for everyone but what if they need to change a bit for each service or environment?    
+
+### Solution
+Microconfig can use static templates and populate them with data unique for each service via placeholders. So you can 
+keep your template in one place and then generate specific result for each service. 
 
 `log template.xml`
 ```xml
@@ -185,20 +212,7 @@ microconfig.template.log:
 
 name: payment-backend
 
-server:
-  port: 80
-  context: /api
-  
-payment-gateway: http://gateway-mock.local
-
-database:
-  type: Postgres
-  pool-size: 10
-  url: jdbc:postgres://10.10.10.10:5432/database
-  
-monitoring:
-  base-path: /monitoring
-  endpoints: info, health, prometheus
+...
 ```
 
 `payment-backend logback.xml`
@@ -213,8 +227,15 @@ monitoring:
 </configuration>
 ```
 
-### Config Diff
-You can generate git style `diff` and see how your configuration changes overtime or compare points in time.
+## Config Diff
+
+### Problem
+When you have your configuration in some kind of templating engine it might be difficult to keep track of changes or
+compare different versions of configuration. For example before new deploy to production you want to know what changed
+in your configuration.     
+
+### Solution
+Microconfig allows you to generate git style `diff` and see how your configuration changes overtime or compare different versions.
 
 `payment-frontend before`
 ```yaml
