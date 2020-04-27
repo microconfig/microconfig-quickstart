@@ -130,17 +130,12 @@ Microconfig has `#{expression+language}` to dynamically generate your values. It
 ```yaml
 name: payment-frontend
 
-server:
-  port: 80
-  
 payment-backend: 
   host: http://payment-backend.local
   path: /api
   timeoutMs: #{ 3 * 60 * 1000 }
 
-monitoring:
-  base-path: /monitoring
-  endpoints: info, health, ready, prometheus
+...
 ```
 
 ## Environment Specific Config
