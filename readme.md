@@ -1,8 +1,8 @@
-# Microconfig Quickstart
+# Quickstart
 
 ## What you will learn
 
-You will see how easy it is to install and use microconfig. 
+You will see how easy it is to install and use Microconfig. 
 
 ## What you need
 
@@ -17,9 +17,14 @@ Our configuration example has 2 services:
 
 Services are combined into `payments` group.
 
-Environment description contains 2 environments:
+We have environment specific values for 2 environments:
 * `dev`
 * `prod`
+
+Each service needs 3 files:
+* `application.yaml` - application config 
+* `deploy.yaml` - deployment config
+* `logback.xml` - logging configuration
 
 ## Setup
 
@@ -43,12 +48,14 @@ Or just [download](https://github.com/microconfig/microconfig-quickstart/archive
 Let's generate configuration for `payments-backend` service in `dev` environment.
 
 ```shell script
-java -jar microconfig.jar -r . -e dev -s payments-backend
+java -jar microconfig.jar -r . -e dev -s payment-backend
 
 Filtered 1 component(s) in [dev] env.
-Generated payments-backend/application.yaml
+Copied 'payment-backend' template ../log/logback.xml -> logback.xml
+Generated payment-backend/application.yaml
+Generated payment-backend/deploy.yaml
 
-Generated [dev] configs in 221ms
+Generated [dev] configs in 265ms
 ```
 
 Parameters: 
@@ -59,8 +66,10 @@ Parameters:
 As a result Microconfig created `build` folder with `dev` configs for `payments-backend`.
 ```
 build
-└── payments-backend
-    └── application.yaml
+└── payment-backend
+    ├── application.yaml
+    ├── deploy.yaml
+    └── logback.xml
 ```  
 
 ### Generate configuration for a group in a specific environment
@@ -70,10 +79,14 @@ Let's generate configuration for `payments` group in `prod` environment.
 java -jar microconfig.jar -r . -e prod -g payments
 
 Filtered 2 component(s) in [prod] env.
-Generated payments-backend/application.yaml
-Generated payments-frontend/application.yaml
+Copied 'payment-backend' template ../log/logback.xml -> logback.xml
+Copied 'payment-frontend' template ../log/logback.xml -> logback.xml
+Generated payment-backend/application.yaml
+Generated payment-backend/deploy.yaml
+Generated payment-frontend/application.yaml
+Generated payment-frontend/deploy.yaml
 
-Generated [prod] configs in 254ms
+Generated [prod] configs in 325ms
 ```
 
 Parameters: 
@@ -84,10 +97,14 @@ Parameters:
 As a result Microconfig created `build` folder with `prod` configs for `payments` group.
 ```
 build
-├── payments-backend
-│   └── application.yaml
-└── payments-frontend
-    └── application.yaml
+├── payment-backend
+│   ├── application.yaml
+│   ├── deploy.yaml
+│   └── logback.xml
+└── payment-frontend
+    ├── application.yaml
+    ├── deploy.yaml
+    └── logback.xml
 ```  
 
 ### Generate configuration for all services in a specific environment
@@ -97,10 +114,14 @@ Let's generate configuration for all services in `dev` environment.
 java -jar microconfig.jar -r . -e dev
 
 Filtered 2 component(s) in [dev] env.
-Generated payments-backend/application.yaml
-Generated payments-frontend/application.yaml
+Copied 'payment-frontend' template ../log/logback.xml -> logback.xml
+Copied 'payment-backend' template ../log/logback.xml -> logback.xml
+Generated payment-backend/application.yaml
+Generated payment-backend/deploy.yaml
+Generated payment-frontend/application.yaml
+Generated payment-frontend/deploy.yaml
 
-Generated [dev] configs in 320ms
+Generated [dev] configs in 326ms
 ```
 
 Parameters: 
@@ -110,8 +131,17 @@ Parameters:
 As a result Microconfig created `build` folder with `dev` configs for all defined services.
 ```
 build
-├── payments-backend
-│   └── application.yaml
-└── payments-frontend
-    └── application.yaml
+├── payment-backend
+│   ├── application.yaml
+│   ├── deploy.yaml
+│   └── logback.xml
+└── payment-frontend
+    ├── application.yaml
+    ├── deploy.yaml
+    └── logback.xml
 ```
+
+## Conclusion
+
+We hope you agree that microconfig is easy to use. Now you can explore current example to see Microconfig syntax.
+Also, you can try out [Microconfig plugin](https://microconfig.io/plugin.html) if you have [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/) or any other IntelliJ IDE installed.
