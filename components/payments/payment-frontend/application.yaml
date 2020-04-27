@@ -1,4 +1,4 @@
-#include monitoring
+#include monitoring, log
 
 name: payment-frontend
 
@@ -6,6 +6,6 @@ server:
   port: 80
 
 payment-backend:
-  host: https://payment-backend.local
-  path: /api
-  timeoutMs: 180000
+  host: ${deploy::payment-backend@ingress.host}
+  path: ${payment-backend@server.context}
+  timeoutMs: #{3 * 60 * 1000}

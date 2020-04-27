@@ -1,0 +1,1 @@
+#var microconfig.template.log.fromFile: ${log@configDir}/logback.xml

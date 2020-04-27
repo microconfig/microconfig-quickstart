@@ -1,0 +1,4 @@
+database:
+  pool-size: 10
+  type: Postgres
+  url: jdbc:postgres://${this@dbHost}:5432/${this@dbName}

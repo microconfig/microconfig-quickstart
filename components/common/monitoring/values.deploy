@@ -1,0 +1,3 @@
+probes:
+  health: /monitoring/health
+  ready: /monitoring/ready

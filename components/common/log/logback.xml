@@ -1,0 +1,8 @@
+<configuration>
+    <appender class="ch.qos.logback.core.FileAppender">
+        <file>logs/${this@name}.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{15} %msg %n</pattern>
+        </encoder>
+    </appender>
+</configuration>

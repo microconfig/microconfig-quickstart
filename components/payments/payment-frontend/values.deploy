@@ -1,0 +1,8 @@
+#include monitoring
+
+replicas: 1
+
+image: "payment-frontend:latest"
+
+ingress:
+  host: http://payments.local

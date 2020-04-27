@@ -15,7 +15,7 @@ payment-gateway: http://gateway-mock.local
 database:
   type: Postgres
   pool-size: 10
-  url: jdbc:postgres://10.10.10.10:5432/database
+  url: jdbc:postgres://10.10.10.10:5432/payments
   
 monitoring:
   base-path: /monitoring
@@ -69,6 +69,30 @@ probes:
   ready: /monitoring/ready
 ```
 
+`payment-backend log config`
+```xml
+<configuration>
+    <appender class="ch.qos.logback.core.FileAppender">
+        <file>logs/payment-backend.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{15} %msg %n</pattern>
+        </encoder>
+    </appender>
+</configuration>
+```
+
+`payment-frontend log config`
+```xml
+<configuration>
+    <appender class="ch.qos.logback.core.FileAppender">
+        <file>logs/payment-frontend.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{15} %msg %n</pattern>
+        </encoder>
+    </appender>
+</configuration>
+```
+
 `payment-backend application config for prod`
 ```yaml
 name: payment-backend
@@ -82,7 +106,7 @@ payment-gateway: https://payment-gateway.com
 database:
   type: Postgres
   pool-size: 50
-  url: jdbc:postgres://20.20.20.20:5432/database
+  url: jdbc:postgres://20.20.20.20:5432/payments
   
 monitoring:
   base-path: /monitoring
@@ -136,8 +160,8 @@ probes:
   ready: /monitoring/ready
 ```
 
-As you can see a lot of copy-paste, some environment specific values and clear dependencies between services. 
-Not let's see how Microconfig solves these problems:
+As you can see a lot of copy-paste, some environment specific values, almost same log templates and clear dependencies between services. 
+Not let's see how Microconfig can help with all of this:
 
 [See individual features in action](features.md)
 

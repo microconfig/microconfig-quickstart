@@ -1,0 +1,6 @@
+image: "payment-frontend:2.1"
+
+replicas: 3
+
+ingress:
+  host: https://payments.example.com

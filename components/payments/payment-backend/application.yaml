@@ -1,14 +1,11 @@
-#include monitoring
+#include monitoring, postgres, log
+
+#var dbName: payments
 
 name: payment-backend
+
+payment-gateway: http://gateway-mock.local
 
 server:
   port: 80
   context: /api
-
-payment-gateway: http://gateway-mock.local
-
-database:
-  pool-size: 10
-  type: Postgres
-  url: jdbc:postgres://10.10.10.10:5432/payments

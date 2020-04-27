@@ -1,0 +1,4 @@
+#var dbHost: 20.20.20.20
+
+database:
+  pool-size: 50
