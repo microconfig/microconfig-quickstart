@@ -44,10 +44,12 @@ to update your common part you just do it in one place and everyone gets this up
 
 `payment-backend`
 ```yaml
+#include monitoring
+
 name: payment-backend
 
 server:
-  port: 80
+  port: 8080
   context: /api
 
 payment-gateway: http://gateway-mock.local
@@ -56,23 +58,20 @@ database:
   pool-size: 10
   type: Postgres
   url: jdbc:postgres://10.10.10.10:5432/database
-
-#include monitoring
 ```
 
 `payment-frontend`
 ```yaml
+#include monitoring
+
 name: payment-frontend
 
-server:
-  port: 80
+server.port: 80
 
 payment-backend:
   host: http://payment-backend.local
   path: /api
   timeoutMs: 180000
-
-#include monitoring
 ```
 
 `monitoring`
@@ -98,7 +97,7 @@ the value only once.
 name: payment-backend
 
 server:
-  port: 80
+  port: 8080
   context: /api
   
 ...
@@ -108,8 +107,7 @@ server:
 ```yaml
 name: payment-frontend
 
-server:
-  port: 80
+server.port: 80
   
 payment-backend: 
   host: http://payment-backend.local
