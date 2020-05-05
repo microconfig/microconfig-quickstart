@@ -46,32 +46,21 @@ to update your common part you just do it in one place and everyone gets this up
 ```yaml
 #include monitoring
 
-name: payment-backend
-
 server:
   port: 8080
   context: /api
 
-payment-gateway: http://gateway-mock.local
-
-database:
-  pool-size: 10
-  type: Postgres
-  url: jdbc:postgres://10.10.10.10:5432/database
+...
 ```
 
 `payment-frontend`
 ```yaml
 #include monitoring
 
-name: payment-frontend
-
-server.port: 80
-
 payment-backend:
   host: http://payment-backend.local
-  path: /api
-  timeoutMs: 180000
+
+...
 ```
 
 `monitoring`
@@ -97,22 +86,17 @@ the value only once.
 name: payment-backend
 
 server:
-  port: 8080
   context: /api
+  port: 8080
   
 ...
 ```
 
 `payment-frontend`
 ```yaml
-name: payment-frontend
-
-server.port: 80
   
 payment-backend: 
-  host: http://payment-backend.local
   path: ${payment-backend@server.context}
-  timeoutMs: 180000
 
 ...
 ```
@@ -127,11 +111,9 @@ Microconfig has `#{'expression' + 'language'}` to dynamically generate your valu
 
 `payment-frontend`
 ```yaml
-name: payment-frontend
+name: #{'${this@name}'.toUpperCase()}
 
 payment-backend: 
-  host: http://payment-backend.local
-  path: /api
   timeoutMs: #{ 3 * 60 * 1000 }
 
 ...
