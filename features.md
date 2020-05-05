@@ -108,9 +108,7 @@ Microconfig has `#{'expression' + 'language'}` to dynamically generate your valu
 payment-backend: 
   timeoutMs: #{ 3 * 60 * 1000 }
 
-service:
-  name: #{ '${this@name}'.toUpperCase() }
-  encodedName: #{ #base64('${this@service.name}') }
+service.name: #{ '${this@name}'.toUpperCase() }
 ...
 ```
 
