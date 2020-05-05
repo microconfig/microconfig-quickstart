@@ -2,7 +2,7 @@
 
 ## What you will learn
 
-You will see how to install Microconfig, organize config layout and build configuration. 
+You will see how to organize config layout, install Microconfig and build configuration. 
 
 ## What you need
 
