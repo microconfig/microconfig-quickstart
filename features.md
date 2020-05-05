@@ -157,11 +157,11 @@ database:
 
 ### Problem
 Your services usually require some additional 3rd party configuration files like a log configuration or a deploy script.
-It's easy if these files are same for everyone but what if they need to change a bit for each service or environment?    
+It's easy if these files doesn't have difference for every service but what if you need to change them a bit for each service or environment?    
 
 ### Solution
-Microconfig can use static templates and populate them with data unique for each service via placeholders. So you can 
-keep your template in one place and then generate specific result for each service. 
+Microconfig can use static templates and populate them with data unique for each service via placeholders. 
+So you can keep your template in one place and then generate specific result for each service. 
 
 `log template.xml`
 ```xml
