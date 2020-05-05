@@ -1,5 +1,6 @@
 # Features by Example
-
+This guide describes the microcservice configuration problems and how Microconfig can help to solve them. 
+More details you can find in [Documentation](https://microconfig.io/documentation.html).
 
 ## Simple Configuration Layout
 
