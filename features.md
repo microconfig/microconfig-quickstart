@@ -124,7 +124,7 @@ payment-backend:
 Sometimes static values are not enough, and you want to do a `+1` or `base64`. Some values even are more readable as expressions.    
 
 ### Solution
-Microconfig has `#{expression+language}` to dynamically generate your values. It supports math operations and much more. 
+Microconfig has `#{'expression' + 'language'}` to dynamically generate your values. It supports math operations and much more. 
 
 `payment-frontend`
 ```yaml
@@ -226,7 +226,7 @@ name: payment-backend
 
 ### Problem
 When you have your configuration in some kind of templating engine it might be difficult to keep track of changes or
-compare different versions of configuration. For example before new deploy to production you want to know what changed
+compare different versions of configuration. For example, before new deployment to production you want to know what changed
 in your configuration.     
 
 ### Solution
