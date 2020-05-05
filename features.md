@@ -104,7 +104,7 @@ Microconfig has `#{'expression' + 'language'}` to dynamically generate your valu
 
 `payment-frontend`
 ```yaml
-name: #{'${this@name}'.toUpperCase()}
+service.name: #{'${this@name}'.toUpperCase()}
 
 payment-backend: 
   timeoutMs: #{ 3 * 60 * 1000 }
