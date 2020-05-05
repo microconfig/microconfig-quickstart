@@ -2,7 +2,7 @@
 
 ## What you will learn
 
-You will see how easy it is to install and use Microconfig. 
+You will see how to install Microconfig, organize config layout and build configuration. 
 
 ## What you need
 
@@ -144,4 +144,4 @@ build
 ## Conclusion
 
 We hope you agree that microconfig is easy to use. Now you can explore current example to see Microconfig syntax.
-Also, you can try out [Microconfig plugin](https://microconfig.io/plugin.html) if you have [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/) or any other IntelliJ IDE installed.
+Also, you can try out [Microconfig plugin](https://microconfig.io/plugin.html) if you have [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) or any other JetBrains IDE installed.
