@@ -117,7 +117,7 @@ service:
 ## Environment Specific Config
 
 ### Problem
-We deploy to different environments that have specific properties. Your production database has different ip address than your dev.
+We deploy services to different environments that have specific properties. Your production database has different ip address than your dev.
 All of those specifications should be applied to final version for your environment.    
 
 ### Solution
