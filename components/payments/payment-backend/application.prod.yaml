@@ -1,1 +1,5 @@
 payment-gateway: https://payment-gateway.com
+
+database:
+  username: ${VAULT-KV@secrets/payment-backend/prod/db.user}
+  password: ${VAULT-KV@secrets/payment-backend/prod/db.pass}

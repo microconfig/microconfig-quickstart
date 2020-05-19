@@ -6,6 +6,10 @@ name: payment-backend
 
 payment-gateway: http://gateway-mock.local
 
+database:
+  username: ${VAULT-KV@secrets/payment-backend/dev/db.user}
+  password: ${VAULT-KV@secrets/payment-backend/dev/db.pass}
+
 server:
   port: 80
   context: /api
