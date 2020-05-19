@@ -1,0 +1,4 @@
+microconfig.vault:
+  address: http://vault.default.svc.cluster.local
+  auth: kubernetes
+  path: cluster

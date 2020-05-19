@@ -1,4 +1,4 @@
-#include monitoring, postgres, log
+#include monitoring, postgres, log, vault
 
 #var dbName: payments
 
