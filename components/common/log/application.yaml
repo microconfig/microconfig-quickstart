@@ -1,1 +1,6 @@
 #var microconfig.template.log.fromFile: ${log@configDir}/logback.xml
+
+logging:
+  level:
+    root: INFO
+    app: DEBUG
