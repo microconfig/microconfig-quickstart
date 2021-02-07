@@ -2,3 +2,6 @@ payments:
   components:
     - payment-backend
     - payment-frontend
+spring:
+  components:
+    - spring-app
