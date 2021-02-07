@@ -1,0 +1,8 @@
+spring:
+  main:
+    banner-mode: "off"
+
+foo: bar
+
+logging:
+  config: config/logback.xml
