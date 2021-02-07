@@ -6,3 +6,5 @@ foo: bar
 
 logging:
   config: config/logback.xml
+  level:
+    root: INFO
