@@ -1,6 +1,7 @@
 #include log
 
-#var remote.property: default-value
+#var remote.property1: default-value
+#var remote.property2: default-value
 
 spring:
   main:
@@ -8,7 +9,9 @@ spring:
 
 foo: bar
 
-baz: ${this@remote.property}
+remote:
+  prop1: ${this@remote.property1}
+  prop2: ${this@remote.property2}
 
 logging:
   config: config/logback.xml
