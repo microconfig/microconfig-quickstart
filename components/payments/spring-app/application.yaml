@@ -1,9 +1,14 @@
 #include log
+
+#var remote.property: default-value
+
 spring:
   main:
     banner-mode: "off"
 
 foo: bar
+
+baz: ${this@remote.property}
 
 logging:
   config: config/logback.xml
